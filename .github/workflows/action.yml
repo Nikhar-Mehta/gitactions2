@@ -1,0 +1,18 @@
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  
+  inputs:
+   company_name:
+    description: 'name of the company'
+   position:
+    description: 'work as'
+  
+  runs:
+   using: 'node12'
+   main: 'app.js'
+   
+   args:
+    - ${{inputs.company_name}}
+    - ${{inputs.position}}
+      
